@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "ES2015",
+    "noImplicitAny": false,
+    "outDir": "built",
+    "rootDir": ".",
+    "allowJs": true,
+    "sourceMap": false,
+    "moduleResolution": "node"
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.js"]
+}
