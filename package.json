@@ -1,23 +1,27 @@
 {
   "name": "akamai",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "",
   "main": "built/main.js",
+  "config": {
+    "ewid": "90462"
+  },
   "scripts": {
-    "build": "rm -rf built/ && rollup -c && cd built && tar -czvf ../'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz' *",
-    "upload": "akamai edgeworkers upload --bundle ./'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz' 90462",
-    "activate": "akamai edgeworkers activate 90462 production",
-    "status": "akamai edgeworkers status 90462",
+    "build": "rm -rf built/ && rollup -c && npm run bundle",
+    "bundle": "cd built && tar -czvf ../'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz' *",
+    "upload": "akamai edgeworkers upload --bundle ./'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz' $npm_package_config_ewid",
+    "activate": "akamai edgeworkers activate $npm_package_config_ewid production",
+    "status": "akamai edgeworkers status $npm_package_config_ewid",
     "curl": "curl http://statsig.com/helloworld --connect-to ::statsig.com.edgesuite.net -v -s -H 'Accept-Language: en'",
     "start-sandbox": "akamai sandbox start",
-    "upload-sandbox": "akamai sandbox add-edgeworker 90462 ./'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz'",
-    "update-sandbox": "akamai sandbox update-edgeworker 90462 ./'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz'",
+    "upload-sandbox": "akamai sandbox add-edgeworker $npm_package_config_ewid ./'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz'",
+    "update-sandbox": "akamai sandbox update-edgeworker $npm_package_config_ewid ./'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz'",
     "curl-sandbox": "curl --header 'Host: statsig.com' http://127.0.0.1:9550/helloworld -v"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "statsig-node-lite": "^0.3.1",
+    "statsig-node-edge": "0.0.0-beta.1",
     "tslib": "^2.8.0"
   },
   "devDependencies": {
@@ -26,6 +30,9 @@
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-typescript": "^12.1.1",
     "@types/akamai-edgeworkers": "^1.1.17",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.7.9",
+    "fs-extra": "^11.2.0",
     "rollup-plugin-copy-assets": "^2.0.3",
     "typescript": "^5.6.3"
   },

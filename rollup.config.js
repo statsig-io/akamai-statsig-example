@@ -1,8 +1,9 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import copy from "rollup-plugin-copy-assets";
-import typescript from '@rollup/plugin-typescript';
-import json from '@rollup/plugin-json';
+import typescript from "@rollup/plugin-typescript";
+import json from "@rollup/plugin-json";
+import edgekv from "./rollup-plugin-edgekv.js";
 
 export default {
   input: "main.ts",
@@ -13,6 +14,7 @@ export default {
     preserveModules: true,
   },
   plugins: [
+    edgekv(),
     typescript(),
     json(),
     //Converts CommonJS modules to ES6 modules.

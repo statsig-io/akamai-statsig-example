@@ -7,8 +7,9 @@
     "rootDir": ".",
     "allowJs": true,
     "sourceMap": false,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "built"],
   "include": ["**/*.ts", "**/*.js"]
 }

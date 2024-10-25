@@ -2,4 +2,3 @@ built
 node_modules
 *.tgz
 .DS_store
-secrets.js
