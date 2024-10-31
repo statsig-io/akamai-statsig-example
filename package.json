@@ -1,6 +1,6 @@
 {
   "name": "akamai",
-  "version": "1.8.0",
+  "version": "1.10.0",
   "description": "",
   "main": "built/main.js",
   "config": {
@@ -12,16 +12,16 @@
     "upload": "akamai edgeworkers upload --bundle ./'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz' $npm_package_config_ewid",
     "activate": "akamai edgeworkers activate $npm_package_config_ewid production",
     "status": "akamai edgeworkers status $npm_package_config_ewid",
-    "curl": "curl http://statsig.com/helloworld --connect-to ::statsig.com.edgesuite.net -v -s -H 'Accept-Language: en'",
+    "curl": "curl http://statsig.com/helloworld --connect-to ::statsig.com.edgesuite.net -v -s -H 'user-id: test-user'",
     "start-sandbox": "akamai sandbox start",
     "upload-sandbox": "akamai sandbox add-edgeworker $npm_package_config_ewid ./'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz'",
     "update-sandbox": "akamai sandbox update-edgeworker $npm_package_config_ewid ./'ew_'$npm_package_config_ewid'_'$npm_package_version'.tgz'",
-    "curl-sandbox": "curl --header 'Host: statsig.com' http://127.0.0.1:9550/helloworld -v"
+    "curl-sandbox": "curl -H 'Host: statsig.com' -H 'user-id: test-sandbox-user' http://127.0.0.1:9550/helloworld -v -s"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "statsig-node-edge": "0.0.0-beta.1",
+    "statsig-akamai-edge": "0.0.0-beta.21",
     "tslib": "^2.8.0"
   },
   "devDependencies": {

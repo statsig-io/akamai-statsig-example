@@ -10,12 +10,12 @@ specifiers:
   '@types/node': ^22.7.9
   fs-extra: ^11.2.0
   rollup-plugin-copy-assets: ^2.0.3
-  statsig-node-edge: 0.0.0-beta.1
+  statsig-akamai-edge: 0.0.0-beta.21
   tslib: ^2.8.0
   typescript: ^5.6.3
 
 dependencies:
-  statsig-node-edge: 0.0.0-beta.1
+  statsig-akamai-edge: 0.0.0-beta.21
   tslib: 2.8.0
 
 devDependencies:
@@ -271,8 +271,8 @@ packages:
       fs-extra: 7.0.1
     dev: true
 
-  /statsig-node-edge/0.0.0-beta.1:
-    resolution: {integrity: sha512-O4lw+TPJgN9scW4oCJgGTyuK+GJhpHZ9NUaI5e/uMe0gL5aiQ9FSBtpXqFfqKHGgCfzRdLbea1OcZry6QCcKvg==}
+  /statsig-akamai-edge/0.0.0-beta.21:
+    resolution: {integrity: sha512-9cWJEtp5yrtqranM4Kgjp/mOkGtqWZ/cQTNoATjzLTYflBe5HfuNG3cS1m3Iq21CWrxSEoOFI+47zfqWMqNIXA==}
     dependencies:
       ua-parser-js: 1.0.39
       uuid: 8.3.2
