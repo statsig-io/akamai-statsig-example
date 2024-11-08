@@ -63,3 +63,4 @@ const variant = experiment.get("variant", "default");
 
 ### Further Details
 1. How to implement sticky bucketing using Cookies https://www.akamai.com/blog/developers/better-a-b-testing-with-edgeworkes-edgekv
+2. Akamai EdgeWorkers only support network subrequests to within their network (Akamai domain). So in order to log events to Statsig, you will need to configure a proxy for `https://api.statsig.com` and overrider the `api` field when initializing `Statsig`
