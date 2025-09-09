@@ -2,8 +2,8 @@
 
 An example repo showing how to integration Statsig in your EdgeWorker using EdgeKV
 
-## Pre-requisite
-(TODO: link to Statstig Akamai EdgeKV integration docs)
+## Pre-requisites
+Follow the guide here before proceeding https://docs.statsig.com/integrations/akamai
 
 ## Getting Started
 
